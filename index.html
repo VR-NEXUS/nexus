@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#000000" />
+<title>NEXUS — Brand Intro</title>
+<meta name="description" content="A cinematic brand intro for Nexus: light, particles, and a portrait." />
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<main class="stage" id="stage">
+  <!-- soft bloom that sits behind everything -->
+  <div class="glow" id="glow" aria-hidden="true"></div>
+
+  <!-- the particle field -->
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <!-- the portrait is the real upload, cut out on black -->
+  <figure class="portrait" id="portrait">
+    <img id="portraitImg" src="assets/portrait.webp" width="900" height="900"
+         alt="Portrait of Vaibhav Pratap, founder of Nexus Studio" decoding="async" />
+  </figure>
+
+  <div class="vig" aria-hidden="true"></div>
+
+  <h1 class="sr-only">Nexus</h1>
+
+  <div class="dock">
+    <a class="enter" id="enterSite" href="./nexus-vr/index.html?entered=1">
+      <span class="enter-sheen" aria-hidden="true"></span>
+      <span class="enter-label">Portfolio</span>
+      <span class="enter-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h14M12.5 6.5 18 12l-5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </span>
+    </a>
+  </div>
+</main>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+/* ══════════════════════════════════════════════════════════════
+   THE DOCUMENT PAGES, privacy, terms, and the page that is not
+   there. Same paper as the studio, set to be read.
+   ══════════════════════════════════════════════════════════════ */
+
+/* the floating dock has no business sitting over a paragraph */
+.doc-page .contact-bar,
+.lost-page .contact-bar{display:none}
+
+/* ── reading pages ─────────────────────────────── */
+.doc{
+  max-width:var(--w-max);
+  margin:0 auto;
+  padding:clamp(104px,15vh,164px) var(--pad-x) clamp(72px,10vh,120px);
+  display:grid;
+  grid-template-columns:minmax(0,240px) minmax(0,1fr);
+  gap:clamp(34px,6vw,104px);
+  align-items:start;
+}
+
+.doc-rail{
+  position:sticky;
+  top:clamp(92px,13vh,120px);
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+.doc-kicker{
+  font-family:var(--font-m);
+  font-size:10.5px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.doc-rail-rule{height:1px;background:var(--line);margin:0}
+.doc-toc p{
+  font-family:var(--font-m);
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+.doc-toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.doc-toc a{
+  display:flex;
+  gap:12px;
+  padding:7px 0;
+  font-size:13.5px;
+  line-height:1.35;
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:color .25s var(--ease),border-color .25s var(--ease);
+}
+.doc-toc a .n{
+  font-family:var(--font-m);
+  font-size:10px;
+  letter-spacing:.1em;
+  color:rgba(221,168,91,.55);
+  padding-top:2px;
+  transition:color .25s var(--ease);
+}
+.doc-toc a:hover,
+.doc-toc a:focus-visible{color:var(--ink);border-color:var(--line)}
+.doc-toc a:hover .n{color:var(--accent)}
+.doc-back{
+  font-family:var(--font-m);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+}
+.doc-back svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.doc-back:hover svg{transform:translateX(3px)}
+.doc-back:hover{color:var(--accent-hover)}
+
+.doc-copy{max-width:74ch}
+.doc-head{padding-bottom:clamp(26px,4vh,38px);border-bottom:1px solid var(--line)}
+.doc-head h1{
+  font-family:var(--font-d);
+  font-size:clamp(38px,5.4vw,68px);
+  line-height:.98;
+  letter-spacing:-.032em;
+  margin:0 0 18px;
+}
+.doc-lede{
+  font-size:clamp(16px,1.35vw,18.5px);
+  line-height:1.6;
+  color:var(--ink);
+  max-width:52ch;
+  margin:0;
+}
+.doc-stamp{
+  margin-top:22px;
+  font-family:var(--font-m);
+  font-size:10.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 30px;
+}
+.doc-stamp > span{display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap}
+.doc-stamp em{font-style:normal;color:rgba(185,174,154,.55)}
+
+/* three plain answers, before the long ones */
+.doc-facts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  margin:clamp(26px,4vh,38px) 0 0;
+}
+.doc-facts div{background:var(--bg);padding:clamp(16px,2.2vw,22px)}
+.doc-fact-k{
+  font-family:var(--font-m);
+  font-size:9.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+.doc-fact-v{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0}
+
+.doc-copy section{
+  padding-top:clamp(28px,4.4vh,44px);
+  border-top:1px solid var(--line);
+  margin-top:clamp(28px,4.4vh,44px);
+}
+.doc-copy section:first-of-type{margin-top:clamp(30px,5vh,48px)}
+.doc-copy h2{
+  font-family:var(--font-d);
+  font-size:clamp(20px,2vw,25px);
+  letter-spacing:-.015em;
+  margin:0 0 14px;
+  display:flex;
+  gap:16px;
+  align-items:baseline;
+}
+.doc-n{
+  font-family:var(--font-m);
+  font-size:11px;
+  letter-spacing:.14em;
+  color:var(--accent);
+  flex:none;
+}
+.doc-copy p{color:var(--muted);font-size:16px;line-height:1.78;margin:0 0 14px;max-width:70ch}
+.doc-copy p:last-child{margin-bottom:0}
+.doc-copy ul{color:var(--muted);font-size:16px;line-height:1.78;margin:0 0 14px;padding-left:18px}
+.doc-copy li{margin-bottom:7px}
+.doc-copy li::marker{color:var(--accent)}
+.doc-copy a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(221,168,91,.45);text-underline-offset:3px}
+.doc-copy a:hover{color:var(--accent-hover);text-decoration-color:var(--accent-hover)}
+
+/* ── the page that is not there ────────────────── */
+.lost{
+  min-height:100vh;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:clamp(96px,13vh,132px) var(--pad-x) clamp(64px,9vh,96px);
+  position:relative;
+  overflow:hidden;
+}
+.lost-inner{
+  width:100%;
+  max-width:var(--w-max);
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(34px,6vw,88px);
+  align-items:start;
+  position:relative;
+  z-index:1;
+}
+.lost-copy{position:relative}
+.lost-code{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  font-family:var(--font-m);
+  font-size:10.5px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:clamp(16px,2.4vh,26px);
+}
+.lost-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(221,168,91,.8)}
+.lost h1{
+  font-family:var(--font-d);
+  font-size:clamp(40px,6.2vw,76px);
+  line-height:.96;
+  letter-spacing:-.036em;
+  margin:0 0 20px;
+  max-width:15ch;
+}
+.lost-lede{color:var(--muted);font-size:clamp(15px,1.25vw,17px);line-height:1.68;max-width:46ch;margin:0 0 30px}
+.lost-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.lost-actions .btn{display:inline-flex;align-items:center;gap:10px}
+.lost-actions svg{width:15px;height:15px;flex:none}
+.lost-actions kbd{
+  font-family:var(--font-m);
+  font-size:10px;
+  line-height:1;
+  padding:4px 6px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  color:var(--muted);
+}
+.lost-path{margin-top:22px;font-family:var(--font-m);font-size:11px;letter-spacing:.05em;color:var(--muted)}
+.lost-path code{padding:4px 8px;background:var(--surface);border:1px solid var(--line);border-radius:4px;color:var(--ink)}
+/* the number, set as a watermark behind the words */
+/* the number, drawn once above the words, as an outline */
+.lost-numeral{
+  display:block;
+  font-family:var(--font-d);
+  font-weight:700;
+  font-size:clamp(76px,10vw,132px);
+  line-height:.78;
+  letter-spacing:-.05em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(221,168,91,.34);
+  margin:0 0 clamp(18px,2.6vh,28px) -3px;
+  pointer-events:none;
+  user-select:none;
+}
+
+.lost-side{padding-top:clamp(4px,1.6vh,16px)}
+.lost-index-title{
+  font-family:var(--font-m);
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+.lost-index{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.lost-index a{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:17px 2px;
+  border-bottom:1px solid var(--line);
+  text-decoration:none;
+  transition:padding-left .3s var(--ease),border-color .3s var(--ease);
+}
+.lost-idx{font-family:var(--font-m);font-size:10px;letter-spacing:.16em;color:var(--muted)}
+.lost-name{font-size:clamp(16px,1.3vw,19px);letter-spacing:-.01em;color:var(--ink);transition:color .25s}
+.lost-go{width:15px;height:15px;margin-left:auto;color:var(--muted);opacity:.45;transform:translate(-4px,4px);transition:transform .3s var(--ease),opacity .3s,color .3s}
+.lost-index a:hover{padding-left:12px;border-color:rgba(221,168,91,.45)}
+.lost-index a:hover .lost-name{color:var(--accent-hover)}
+.lost-index a:hover .lost-go{opacity:1;transform:none;color:var(--accent)}
+.lost-help{margin-top:26px;font-size:13px;line-height:1.6;color:var(--muted);max-width:38ch}
+.lost-help a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.lost-help a:hover{color:var(--accent-hover)}
+
+/* ── narrower screens ─────────────────────────── */
+@media (max-width:900px){
+  .doc{grid-template-columns:minmax(0,1fr);gap:clamp(22px,4vh,30px)}
+  .doc-rail{position:static;order:2;gap:18px}
+  .doc-copy{order:1;max-width:none}
+  .doc-head{padding-bottom:24px}
+  .doc-facts{grid-template-columns:minmax(0,1fr)}
+  .doc-toc ol{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:2px 18px;
+  }
+  .doc-back{order:3}
+  .lost-inner{grid-template-columns:minmax(0,1fr);gap:36px}
+  .lost{padding-top:clamp(96px,14vh,128px)}
+}
+
+@media (max-width:620px){
+  .doc{padding-top:clamp(92px,13vh,120px)}
+  .doc-stamp{letter-spacing:.09em;gap:6px 18px;font-size:10px}
+  .doc-head h1{font-size:clamp(32px,9vw,44px)}
+  .doc-copy p,.doc-copy ul{font-size:15.5px;line-height:1.72}
+  .lost h1{font-size:clamp(34px,9.6vw,46px)}
+  .lost-numeral{font-size:clamp(64px,18vw,96px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .doc-toc a,.doc-back svg,.lost-index a,.lost-index a:hover{padding-left:0;transition:none}
+}
+
+/* a very narrow phone: the meta line stacks instead of pushing the page wide */
+@media (max-width:400px){
+  .doc-stamp{flex-direction:column;gap:7px}
+  .doc-stamp > span{display:block;white-space:normal}
+  .doc-stamp em{display:block;margin-bottom:3px}
+}
+
+/* ── the cookie note reads as a bar on a reading page,
+      never as a card floating over a paragraph ───── */
+.doc-page .cookie,
+.lost-page .cookie{
+  left:0;
+  right:0;
+  bottom:0;
+  width:auto;
+  max-width:none;
+  border-radius:0;
+  border-left:0;
+  border-right:0;
+  border-bottom:0;
+  padding:14px clamp(18px,4vw,56px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(14px,2.4vw,30px);
+  flex-wrap:wrap;
+  box-shadow:0 -20px 48px rgba(0,0,0,.45);
+}
+.doc-page .cookie p,
+.lost-page .cookie p{
+  margin:0;
+  max-width:64ch;
+}
+.doc-page .cookie .cookie-actions,
+.lost-page .cookie .cookie-actions{
+  flex:none;
+}
+
+@media (max-width:620px){
+  .doc-page .cookie,
+  .lost-page .cookie{
+    padding:13px 16px;
+    gap:11px;
+    justify-content:flex-start;
+  }
+  .doc-page .cookie p,
+  .lost-page .cookie p{font-size:12px;line-height:1.55}
+}

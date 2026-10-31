@@ -1,0 +1,284 @@
+/* ══════════════════════════════════════════════════════════════
+   NEXUS — cinematic brand intro
+   Pure black, one dot of light, particles, the real portrait.
+   ══════════════════════════════════════════════════════════════ */
+
+@font-face{
+  font-family:'Bricolage Grotesque';
+  src:url('assets/fonts/bricolage-latin.woff2') format('woff2');
+  font-weight:300 800;
+  font-style:normal;
+  font-display:block;
+}
+
+:root{
+  --paper:#000000;
+  --ink:#ffffff;
+  --glow-size:360px;
+}
+
+*{ box-sizing:border-box; }
+
+html{ background:var(--paper); }
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;
+  overflow:hidden;
+  cursor:default;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+
+.stage{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  background:#000;
+  isolation:isolate;
+}
+
+/* the ambient bloom: one soft white halo, nothing else */
+.glow{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:var(--glow-size);
+  height:var(--glow-size);
+  margin:calc(var(--glow-size) / -2) 0 0 calc(var(--glow-size) / -2);
+  border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,
+    rgba(255,255,255,.60) 0%,
+    rgba(255,255,255,.20) 15%,
+    rgba(255,255,255,.05) 34%,
+    rgba(255,255,255,.012) 52%,
+    rgba(255,255,255,0) 70%);
+  filter:blur(26px);
+  opacity:0;
+  pointer-events:none;
+  will-change:opacity,transform;
+}
+
+#field{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+/* the portrait stands on black, its lower edge dissolved into the frame */
+.portrait{
+  position:absolute;
+  inset:0;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  /* the lower room is kept for the one control: the portrait never sits on it */
+  padding-bottom:clamp(92px,12vh,132px);
+  opacity:0;
+  pointer-events:none;
+}
+
+.portrait::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:44%;
+  width:min(88vw,700px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(255,255,255,.07) 0%,
+    rgba(255,255,255,.025) 38%,
+    rgba(255,255,255,0) 66%);
+  opacity:0;
+  filter:blur(14px);
+}
+
+.portrait img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-height:min(80svh,820px);
+  max-width:min(92vw,820px);
+  filter:contrast(1.03) saturate(1.02) drop-shadow(0 40px 90px rgba(0,0,0,.85));
+  -webkit-mask-image:linear-gradient(to bottom,#000 85%,rgba(0,0,0,0) 100%);
+          mask-image:linear-gradient(to bottom,#000 85%,rgba(0,0,0,0) 100%);
+  will-change:transform,opacity;
+}
+
+/* a wide, quiet vignette keeps the eye on the middle */
+.vig{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(ellipse 80% 72% at 50% 44%,
+    rgba(0,0,0,0) 44%,
+    rgba(0,0,0,.42) 76%,
+    rgba(0,0,0,.88) 100%);
+}
+
+/* ── the one way in ───────────────────────────────
+   A glass pill with one white disc. Light breathes across it, a ring
+   leaves it now and then, and the pointer pulls it a few pixels. */
+.dock{
+  position:absolute;
+  left:50%;
+  bottom:max(26px,env(safe-area-inset-bottom));
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  z-index:3;
+}
+
+.enter{
+  --spot-x:50%;
+  --spot-y:50%;
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  height:62px;
+  padding:0 9px 0 34px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.38);
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  text-decoration:none;
+  pointer-events:auto;
+  background:
+    radial-gradient(150px 76px at var(--spot-x) var(--spot-y), rgba(255,255,255,.22), rgba(255,255,255,0) 72%),
+    linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.05) 58%, rgba(255,255,255,.09));
+  -webkit-backdrop-filter:blur(20px) saturate(1.7);
+          backdrop-filter:blur(20px) saturate(1.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.28),
+    inset 0 -1px 0 rgba(255,255,255,.06),
+    0 30px 66px -32px rgba(255,255,255,.62);
+  translate:0 0;
+  transition:
+    translate .5s cubic-bezier(.22,.61,.36,1),
+    border-color .45s ease,
+    box-shadow .55s ease,
+    background .45s ease;
+}
+.enter:hover,
+.enter:focus-visible{
+  translate:0 -3px;
+  border-color:rgba(255,255,255,.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.40),
+    inset 0 -1px 0 rgba(255,255,255,.08),
+    0 34px 74px -32px rgba(255,255,255,.85),
+    0 0 90px -24px rgba(255,255,255,.45);
+}
+.enter:focus-visible{ outline:2px solid #fff; outline-offset:6px; }
+
+/* the label keeps its tracking, and takes a little back at the end */
+.enter-label{ display:inline-block; margin-right:-.2em; }
+
+/* one white disc, and an arrow that leans into the site */
+.enter-arrow{
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fff;
+  color:#0b0b0b;
+  box-shadow:
+    0 8px 20px -10px rgba(255,255,255,.95),
+    inset 0 -1px 0 rgba(0,0,0,.14);
+  transition:transform .55s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease;
+}
+.enter-arrow svg{
+  width:17px;
+  height:17px;
+  transition:transform .5s cubic-bezier(.22,.61,.36,1);
+}
+.enter:hover .enter-arrow{ transform:scale(1.07); }
+.enter:hover .enter-arrow svg{ transform:translateX(3px); }
+
+/* light crosses the glass every few seconds, and a ring leaves it */
+.enter-sheen{
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  overflow:hidden;
+  pointer-events:none;
+}
+.enter-sheen::after{
+  content:"";
+  position:absolute;
+  top:-70%;
+  bottom:-70%;
+  left:-45%;
+  width:26%;
+  background:linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.42) 50%,
+    rgba(255,255,255,0) 100%);
+  filter:blur(1px);
+  transform:rotate(18deg) translateX(-60%);
+  animation:nxSheen 7s cubic-bezier(.45,0,.2,1) infinite;
+}
+.enter::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  animation:nxPulse 7s ease-out infinite;
+}
+@keyframes nxSheen{
+  0%, 62%   { transform:rotate(18deg) translateX(-60%); opacity:0; }
+  64%       { opacity:1; }
+  92%       { transform:rotate(18deg) translateX(520%); opacity:0; }
+  100%      { transform:rotate(18deg) translateX(520%); opacity:0; }
+}
+@keyframes nxPulse{
+  0%        { box-shadow:0 0 0 0 rgba(255,255,255,.26); }
+  46%       { box-shadow:0 0 0 18px rgba(255,255,255,0); }
+  100%      { box-shadow:0 0 0 18px rgba(255,255,255,0); }
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;height:1px;
+  margin:-1px;padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
+}
+
+@media (max-width:600px){
+  :root{ --glow-size:260px; }
+  .portrait{ padding-bottom:clamp(104px,15vh,140px); }
+  .portrait img{ max-height:min(66svh,520px); max-width:96vw; }
+  .enter{ height:54px; padding:0 8px 0 24px; font-size:10.5px; gap:13px; letter-spacing:.22em; }
+  .enter-arrow{ width:38px; height:38px; }
+  .enter-arrow svg{ width:15px; height:15px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .enter{ transition:none; }
+  .enter-arrow,
+  .enter-arrow svg{ transition:none; }
+  .enter-sheen::after,
+  .enter::after{ animation:none; }
+  .glow{ filter:blur(18px); }
+}

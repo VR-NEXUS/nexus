@@ -1,0 +1,5 @@
+# Nexus. Identity and 3D web studio.
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
