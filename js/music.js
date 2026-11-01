@@ -19,10 +19,10 @@
 
   var MANIFEST = 'assets/audio/paper-boat.json';
   var FOLDER = 'assets/audio/';
-  var SRC = FOLDER + 'paper-boat.mp3';
+  var SRC = FOLDER + 'atlasaudio-ambient-cinematic-510518.mp3';
   var KEY = 'nexus.music.v1';
-  var TITLE = 'Paper Boat';
-  var ARTIST = 'Otomusu';
+  var TITLE = 'Ambient Cinematic';
+  var ARTIST = 'AtlasAudio';
 
   var store = {
     read: function () {
