@@ -1,10 +1,11 @@
 {
-  "title": "Paper Boat",
-  "artist": "Otomusu",
-  "file": "paper-boat.mp3",
-  "installed": false,
+  "title": "Ambient Cinematic",
+  "artist": "AtlasAudio",
+  "file": "atlasaudio-ambient-cinematic-510518.mp3",
+  "installed": true,
   "licence": {
-    "status": "pending",
-    "note": "no licensed master on file yet; add the track and set installed to true"
+    "status": "pixabay-content-license-user-downloaded",
+    "source": "https://pixabay.com/music/",
+    "note": "Downloaded by the site owner from Pixabay. Retain the original Pixabay track page and licence record with project records; verify the exact track page and applicable licence before commercial use."
   }
 }
