@@ -1,0 +1,10 @@
+{
+  "title": "Paper Boat",
+  "artist": "Otomusu",
+  "file": "paper-boat.mp3",
+  "installed": false,
+  "licence": {
+    "status": "pending",
+    "note": "no licensed master on file yet; add the track and set installed to true"
+  }
+}

@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Page not found. Nexus</title>
+<meta name="description" content="This page does not exist. Return to the Nexus studio, the project, the guidelines, or write to Vaibhav." />
+<meta name="theme-color" content="#E9E5E2" />
+<meta name="color-scheme" content="light" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self' https://formspree.io; object-src 'none'; img-src 'self' data:; font-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-iQnXSp8AW4NlvB5pFPUS5l4S3Kj4+EybADQv9X1jEp8=' 'sha256-Kt0XeJzRfoBm6pStwk1FqR8tMxZzb27juzmzIiLokSo='; connect-src 'self' https://formspree.io; frame-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="author" content="Vaibhav Pratap" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nexus" />
+<meta property="og:title" content="Page not found. Nexus" />
+<meta name="twitter:card" content="summary" />
+<link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/dmmono-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/orbitron-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="css/music.css" />
+<link rel="stylesheet" href="css/lost-film.css" />
+
+<style>
+/* ─────────────────────────────────────────────────────────────
+   NEXUS · the lost page
+   Warm paper, one gold, two typefaces: Manrope for speech,
+   DM Mono for the machine's own voice.
+   ───────────────────────────────────────────────────────────── */
+@font-face{
+  font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;
+  src:url("assets/fonts/manrope-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:"DM Mono";font-style:normal;font-weight:400;font-display:swap;
+  src:url("assets/fonts/dmmono-400-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:"DM Mono";font-style:normal;font-weight:500;font-display:swap;
+  src:url("assets/fonts/dmmono-500-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root{
+  --paper:#E9E5E2;
+  --ink:#111110;
+  --muted:#716D69;
+  --gold:#C99A4B;
+  --gold-deep:#A87C33;
+  --line:rgba(17,17,16,.10);
+  --line-soft:rgba(17,17,16,.06);
+  --glass:rgba(255,255,255,.52);
+  --glass-strong:rgba(255,255,255,.72);
+  --spring:cubic-bezier(.22,1.12,.36,1);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"DM Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --hdr:76px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html,body{height:100%}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;line-height:1.55;
+  overflow:hidden;                 /* the lost page never scrolls */
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;flex-direction:column;
+  min-height:100dvh;
+}
+
+/* a whisper of paper grain, drawn with type rather than pictures */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background:
+    radial-gradient(120% 80% at 50% -10%,rgba(255,255,255,.75),rgba(255,255,255,0) 60%),
+    radial-gradient(90% 70% at 50% 115%,rgba(201,154,75,.09),rgba(201,154,75,0) 62%);
+}
+
+.sr-only{
+  position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+.skip{
+  position:fixed;left:16px;top:-60px;z-index:60;
+  background:var(--ink);color:var(--paper);text-decoration:none;
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 14px;border-radius:3px;transition:top .25s var(--ease);
+}
+.skip:focus{top:14px}
+
+/* ── the header ───────────────────────────────────────────── */
+.hdr{
+  position:relative;z-index:30;flex:none;
+  padding:18px clamp(16px,3.4vw,40px) 0;
+}
+.hdr-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  height:calc(var(--hdr) - 18px);
+}
+
+/* brand: a gold wave, a wordmark, and a machine that is ready */
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex:none}
+.brand:focus-visible{outline:none;box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--gold);border-radius:8px}
+.brand-mark{width:44px;height:22px;color:var(--gold);display:block}
+.brand-mark path{stroke-dasharray:230;stroke-dashoffset:230;animation:drawMark 1.5s var(--ease) .12s forwards}
+@keyframes drawMark{to{stroke-dashoffset:0}}
+.brand-word{
+  font-weight:800;font-size:15px;letter-spacing:.34em;text-indent:.34em;
+  text-transform:uppercase;color:var(--ink);line-height:1;
+}
+.status{
+  display:inline-flex;align-items:center;gap:7px;margin-left:4px;
+  font-family:var(--f-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;
+}
+.status i{
+  width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;
+  box-shadow:0 0 0 0 rgba(201,154,75,.5);animation:ready 3.2s var(--ease) infinite;
+}
+@keyframes ready{
+  0%,100%{box-shadow:0 0 0 0 rgba(201,154,75,.45)}
+  50%{box-shadow:0 0 0 5px rgba(201,154,75,0)}
+}
+
+/* ── the navigation pill ──────────────────────────────────── */
+.nav{
+  position:relative;display:flex;align-items:center;gap:2px;
+  padding:5px;border-radius:999px;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.85) inset,
+    0 10px 30px -22px rgba(17,17,16,.55),
+    0 0 0 1px rgba(17,17,16,.045);
+  backdrop-filter:blur(16px) saturate(1.35);
+  -webkit-backdrop-filter:blur(16px) saturate(1.35);
+  isolation:isolate;overflow:hidden;
+}
+/* one slow pass of light, now and then: the pill is glass, not a box */
+.nav::after{
+  content:"";position:absolute;inset:-1px;z-index:0;pointer-events:none;
+  background:linear-gradient(102deg,transparent 38%,rgba(255,255,255,.85) 50%,transparent 62%);
+  transform:translateX(-130%);
+  animation:pillShine 9s var(--ease) 1.6s infinite;
+}
+@keyframes pillShine{
+  0%{transform:translateX(-130%)}
+  18%{transform:translateX(130%)}
+  100%{transform:translateX(130%)}
+}
+/* the capsule that follows the pointer */
+.nav-capsule{
+  position:absolute;top:5px;left:0;height:calc(100% - 10px);width:0;
+  border-radius:999px;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(201,154,75,.17),rgba(201,154,75,.09));
+  box-shadow:inset 0 0 0 1px rgba(201,154,75,.35),0 6px 16px -12px rgba(168,124,51,.9);
+  opacity:0;
+  transition:transform .46s var(--spring),width .46s var(--spring),opacity .3s var(--ease);
+}
+.nav.has-capsule .nav-capsule{opacity:1}
+
+.nav a,.nav button{
+  position:relative;z-index:1;display:inline-flex;align-items:center;
+  font-family:var(--f-body);font-size:12.5px;font-weight:500;letter-spacing:.015em;
+  color:var(--muted);text-decoration:none;background:none;border:0;cursor:pointer;
+  padding:9px 14px;border-radius:999px;line-height:1;
+  transition:color .32s var(--ease),transform .34s var(--spring),opacity .3s var(--ease);
+}
+.nav a:hover,.nav a:focus-visible,.nav button:hover,.nav button:focus-visible{color:var(--ink);transform:translateY(-1px)}
+.nav a:active,.nav button:active{transform:translateY(0) scale(.965);color:var(--gold-deep)}
+.nav a:focus-visible,.nav button:focus-visible{
+  outline:none;box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 0 4px rgba(201,154,75,.75);
+}
+.nav-search{padding:9px 11px}
+.nav-search svg{width:15px;height:15px;display:block}
+.nav-search[aria-expanded="true"]{color:var(--gold-deep)}
+
+/* ── the search panel ─────────────────────────────────────── */
+.search{
+  position:fixed;z-index:40;
+  top:calc(var(--hdr) + 10px);
+  right:clamp(16px,3.4vw,40px);
+  width:min(472px,calc(100vw - 32px));
+  border-radius:18px;padding:16px 16px 12px;
+  background:var(--glass-strong);
+  border:1px solid rgba(255,255,255,.72);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 44px 90px -46px rgba(17,17,16,.6),
+    0 2px 6px -4px rgba(17,17,16,.18),
+    0 0 0 1px rgba(17,17,16,.05);
+  backdrop-filter:blur(22px) saturate(1.45);
+  -webkit-backdrop-filter:blur(22px) saturate(1.45);
+  transform-origin:top right;
+  transform:translateY(-10px) scale(.982);opacity:0;visibility:hidden;
+  transition:transform .46s var(--spring),opacity .3s var(--ease),visibility .3s;
+}
+.search.is-open{transform:none;opacity:1;visibility:visible}
+.search-row{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:2px 2px 12px}
+.search-row svg{width:16px;height:16px;color:var(--gold);flex:none}
+#searchInput{
+  flex:1;min-width:0;border:0;background:none;outline:none;caret-color:var(--gold-deep);
+  font-family:var(--f-body);font-size:16px;color:var(--ink);padding:7px 0;letter-spacing:-.005em;
+}
+#searchInput::placeholder{color:rgba(113,109,105,.72)}
+#searchInput::-webkit-search-cancel-button{display:none}
+.search-key{
+  font-family:var(--f-mono);font-size:9px;letter-spacing:.12em;color:var(--muted);
+  border:1px solid var(--line);border-radius:5px;padding:4px 7px;flex:none;line-height:1;
+}
+
+.search-results{margin:10px 0 0;max-height:min(48vh,312px);overflow:auto;scrollbar-width:thin}
+.search-results a{
+  position:relative;
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:12px 12px 12px 14px;border-radius:10px;text-decoration:none;color:var(--ink);
+  font-size:14.5px;font-weight:500;letter-spacing:-.006em;
+  transition:background .22s var(--ease),color .22s var(--ease),transform .3s var(--spring);
+}
+.search-results a::before{
+  content:"";position:absolute;left:0;top:50%;width:2px;height:0;border-radius:2px;
+  background:var(--gold);transform:translateY(-50%);
+  transition:height .3s var(--spring);
+}
+.search-results a{
+  opacity:0;
+  animation:searchRow .44s var(--ease) forwards;
+  animation-delay:calc(var(--i,0) * 26ms);
+}
+@keyframes searchRow{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.search-label{min-width:0}
+.search-results mark{background:none;color:var(--ink);font-weight:600;position:relative;padding:0 1px}
+.search-results mark::after{
+  content:"";position:absolute;left:1px;right:1px;bottom:.02em;height:1px;
+  background:var(--gold);opacity:.55;
+}
+.search-results a:hover{background:rgba(17,17,16,.035)}
+.search-results a:hover::before{height:14px}
+.search-results a.is-active{background:rgba(201,154,75,.14)}
+.search-results a.is-active::before{height:22px}
+.search-results a:focus-visible{outline:none;background:rgba(201,154,75,.14);box-shadow:0 0 0 2px rgba(201,154,75,.55)}
+.search-results em{
+  font-family:var(--f-mono);font-style:normal;font-size:9px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap;
+}
+
+.search-empty{padding:20px 12px 16px}
+.search-empty-title{
+  display:block;
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink);
+}
+.search-empty-note{
+  display:block;margin-top:7px;
+  font-size:12.5px;color:var(--muted);letter-spacing:-.005em;
+}
+
+.search-foot{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  margin-top:8px;padding:11px 12px 2px;border-top:1px solid var(--line-soft);
+  font-family:var(--f-mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);
+}
+.search-count{margin-right:auto;color:var(--ink);opacity:.7}
+.search-foot span{display:inline-flex;align-items:center;gap:5px}
+.search-foot kbd{
+  font-family:var(--f-mono);font-size:8.5px;line-height:1;
+  min-width:16px;height:16px;padding:0 4px;
+  display:inline-grid;place-items:center;
+  border:1px solid var(--line);border-radius:4px;background:rgba(255,255,255,.55);
+  color:var(--ink);letter-spacing:0;
+}
+
+/* ── the stage ────────────────────────────────────────────── */
+.stage{
+  position:relative;z-index:10;flex:1 1 auto;min-height:0;
+  display:grid;place-items:center;
+  padding:0 clamp(16px,4vw,40px);
+}
+.stage-inner{position:relative;width:100%;height:100%;display:grid;place-items:center}
+
+#px{
+  position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;
+  transition:opacity .6s var(--ease);
+}
+.is-revealed #px{cursor:default}
+
+.copy{
+  position:relative;z-index:2;text-align:center;max-width:min(92vw,620px);
+  opacity:0;                       /* unseen, but never hidden from a screen reader */
+  pointer-events:none;
+  transform:translateY(10px);
+}
+.is-revealed .copy{
+  opacity:1;pointer-events:auto;transform:none;
+  transition:opacity .7s var(--ease),transform .7s var(--spring);
+}
+.copy > *{opacity:0;transform:translateY(12px)}
+.is-revealed .copy > *{animation:rise .72s var(--spring) forwards}
+.is-revealed .copy .emoji{animation-delay:.02s}
+.is-revealed .copy h1{animation-delay:.12s}
+.is-revealed .copy .lede{animation-delay:.22s}
+.is-revealed .copy .play{animation-delay:.32s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+.emoji{
+  font-size:clamp(30px,4.6vw,44px);line-height:1;margin-bottom:clamp(14px,2.4vw,22px);
+  display:block;filter:saturate(.9);
+}
+.copy h1{
+  font-size:clamp(23px,3.6vw,38px);font-weight:600;line-height:1.14;
+  letter-spacing:-.015em;margin-bottom:12px;
+}
+.copy .lede{font-size:clamp(14px,1.5vw,16.5px);color:var(--muted);line-height:1.6}
+.copy .play{
+  margin-top:clamp(20px,3vw,30px);
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-deep);
+}
+
+/* ── the foot of the page ─────────────────────────────────── */
+.ind{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:20;
+  width:92px;height:1px;background:var(--line);overflow:hidden;border-radius:2px;
+}
+.ind i{
+  position:absolute;top:0;left:0;height:100%;width:30px;border-radius:2px;
+  background:var(--gold);
+  animation:indSweep 2.6s var(--ease) infinite;
+}
+@keyframes indSweep{
+  0%{transform:translateX(-30px)}
+  55%,100%{transform:translateX(92px)}
+}
+.ind.is-done i{animation:none;width:92px;transform:none;background:rgba(201,154,75,.45)}
+
+.hint{
+  position:fixed;left:clamp(16px,3.4vw,40px);bottom:22px;z-index:20;
+  font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);opacity:.85;
+}
+.hint b{font-weight:500;color:var(--gold-deep)}
+
+/* ── the quiet fallbacks ──────────────────────────────────── */
+.hint-touch{display:none}
+@media (hover:none){
+  .hint-cursor{display:none}
+  .hint-touch{display:inline}
+}
+@media (max-width:760px){
+  :root{--hdr:64px}
+  .hdr{padding:12px 16px 0}
+  .hdr-inner{flex-wrap:wrap;height:auto;gap:10px;justify-content:space-between}
+  .brand{gap:10px}
+  .brand-mark{width:36px;height:18px}
+  .brand-word{font-size:13px;letter-spacing:.3em}
+  .status{font-size:8.5px;letter-spacing:.16em;gap:6px;margin-left:2px}
+  .nav{order:3;width:100%;justify-content:space-between;padding:4px;margin-top:2px}
+  .nav a,.nav button{font-size:11px;padding:9px 8px;letter-spacing:.01em}
+  .nav a{flex:1;justify-content:center}
+  .nav-search{flex:none}
+  .search{top:calc(var(--hdr) + 46px);left:16px;right:16px;width:auto;transform-origin:top center}
+  .ind{bottom:16px}
+  .hint{bottom:34px;left:16px;right:16px;font-size:9px;letter-spacing:.14em}
+}
+@media (max-width:380px){
+  .nav a{font-size:10px;padding:9px 5px}
+  .brand-word{font-size:12px;letter-spacing:.26em}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .brand-mark path{stroke-dashoffset:0}
+  .nav-capsule{transition:none}
+  .copy > *{opacity:1;transform:none}
+  .ind i{animation:none;width:92px;transform:none;background:rgba(201,154,75,.45)}
+}
+</style>
+<meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <a class="brand" href="index.html" aria-label="Nexus, back to the studio home">
+      <svg class="brand-mark" viewBox="0 0 120 60" aria-hidden="true" focusable="false">
+        <path d="M6 30 C 26 6, 46 54, 66 30 S 104 12, 114 30" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-word">NEXUS</span>
+      <span class="status"><i aria-hidden="true"></i>System ready</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <span class="nav-capsule" aria-hidden="true"></span>
+      <a href="index.html#studio">Studio</a>
+      <a href="index.html#project">Project</a>
+      <a href="index.html#guidelines">Guidelines</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+      <button class="nav-search" id="searchBtn" type="button"
+              aria-label="Search the site" aria-expanded="false" aria-controls="searchPanel">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.4" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M16 16l4.2 4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <div class="search" id="searchPanel" role="search">
+    <div class="search-row">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.4" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M16 16l4.2 4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+      <label class="sr-only" for="searchInput">Search the site</label>
+      <input id="searchInput" type="text" autocomplete="off" spellcheck="false"
+             placeholder="Search the studio" role="combobox" aria-haspopup="listbox"
+             aria-expanded="false" aria-controls="searchResults" aria-autocomplete="list" />
+      <span class="search-key" aria-hidden="true">/</span>
+    </div>
+    <div class="search-results" id="searchResults" role="listbox" aria-label="Pages"></div>
+    <p class="search-empty" id="searchEmpty" role="status" hidden>
+      <span class="search-empty-title">No matches found</span>
+      <span class="search-empty-note">Try studio, project or contact.</span>
+    </p>
+    <div class="search-foot" aria-hidden="true">
+      <span class="search-count" id="searchCount">5 pages</span>
+      <span><kbd>&#8593;</kbd><kbd>&#8595;</kbd>move</span>
+      <span><kbd>&#8629;</kbd>open</span>
+      <span><kbd>esc</kbd>close</span>
+    </div>
+  </div>
+</header>
+
+<main class="stage" id="main">
+  <div class="stage-inner" id="stage">
+    <canvas id="px" aria-hidden="true"></canvas>
+
+    <div class="copy" id="copy">
+      <span class="emoji" aria-hidden="true">😕</span>
+      <h1>This page doesn’t exist.</h1>
+      <p class="lede">But there’s always another way.</p>
+      <p class="play">( might as well play. )</p>
+    </div>
+    <p class="sr-only" id="announce" role="status" aria-live="polite"></p>
+  </div>
+</main>
+
+<div class="ind" id="ind" aria-hidden="true"><i></i></div>
+<p class="hint" aria-hidden="true">
+  <span class="hint-cursor"><b>Move the cursor</b> to push the pixels</span>
+  <span class="hint-touch"><b>Drag</b> to push the pixels</span>
+</p>
+
+<!-- The film. A warning, four seconds of binary rain, and the number
+     coming home. It is drawn by js/lost-film.js, sits above the page and
+     below the music player, and takes no clicks: the page stays usable
+     underneath it. Hidden and inert unless the script sets a stage on it. -->
+<div class="film" id="film" data-stage="off" aria-hidden="true">
+  <canvas class="film-rain" id="filmRain"></canvas>
+  <div class="film-warn" id="filmWarn">
+    <p class="film-title">YOU'VE BEEN HACKED<span class="film-caret"></span></p>
+    <p class="film-sub">Unauthorized access detected</p>
+    <p class="film-sub">System override initiated</p>
+  </div>
+</div>
+
+<noscript>
+  <style>
+    .film{display:none!important}
+    .copy{opacity:1!important;transform:none!important}
+    .copy > *{opacity:1!important;transform:none!important}
+    #px{opacity:0}
+  </style>
+</noscript>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var stage = document.getElementById('stage');
+  var canvas = document.getElementById('px');
+  var ctx = canvas.getContext('2d');
+  var ind = document.getElementById('ind');
+  var announce = document.getElementById('announce');
+
+  /* ══ 1. The navigation capsule ══════════════════════════════
+     One element follows the pointer from link to link. It is
+     measured, never guessed, so the pill can change width. */
+  (function nav() {
+    var bar = document.getElementById('nav');
+    var capsule = bar.querySelector('.nav-capsule');
+    var links = Array.prototype.slice.call(bar.querySelectorAll('a, button'));
+    var current = null;
+
+    function moveTo(el) {
+      if (!el) { bar.classList.remove('has-capsule'); current = null; return; }
+      var r = el.getBoundingClientRect();
+      var p = bar.getBoundingClientRect();
+      capsule.style.width = r.width + 'px';
+      capsule.style.transform = 'translateX(' + (r.left - p.left) + 'px)';
+      bar.classList.add('has-capsule');
+      current = el;
+    }
+
+    links.forEach(function (el) {
+      el.addEventListener('pointerenter', function () { if (el !== bar.querySelector('.nav-search')) moveTo(el); });
+      el.addEventListener('focus', function () { if (el !== bar.querySelector('.nav-search')) moveTo(el); });
+    });
+    bar.addEventListener('pointerleave', function () { moveTo(null); });
+    bar.addEventListener('focusout', function (e) {
+      if (!bar.contains(e.relatedTarget)) moveTo(null);
+    });
+    window.addEventListener('resize', function () { if (current) moveTo(current); });
+  })();
+
+  /* ══ 2. Search ═════════════════════════════════════════════ */
+  (function search() {
+    var panel = document.getElementById('searchPanel');
+    var btn = document.getElementById('searchBtn');
+    var input = document.getElementById('searchInput');
+    var list = document.getElementById('searchResults');
+    var empty = document.getElementById('searchEmpty');
+    var count = document.getElementById('searchCount');
+
+    var pages = [
+      { name: 'Studio',     note: 'Who you are hiring', href: 'index.html#studio' },
+      { name: 'Project',    note: 'Case study 001',     href: 'index.html#project' },
+      { name: 'Guidelines', note: 'Logo, colour, type', href: 'index.html#guidelines' },
+      { name: 'FAQ',        note: 'Questions, answered', href: 'index.html#faq' },
+      { name: 'Contact',    note: 'Write to Vaibhav',   href: 'index.html#contact' }
+    ];
+
+    var active = -1;
+    var open = false;
+
+    function items() { return Array.prototype.slice.call(list.querySelectorAll('a')); }
+
+    function setActive(i) {
+      var all = items();
+      if (!all.length) { active = -1; input.removeAttribute('aria-activedescendant'); return; }
+      active = (i + all.length) % all.length;
+      all.forEach(function (a, n) { a.classList.toggle('is-active', n === active); });
+      all[active].id = all[active].id || 'sr-' + active;
+      input.setAttribute('aria-activedescendant', all[active].id);
+      all[active].scrollIntoView({ block: 'nearest' });
+    }
+
+    function markMatch(label, name, query) {
+      var at = query ? name.toLowerCase().indexOf(query) : -1;
+      if (at < 0) { label.textContent = name; return; }
+      label.appendChild(document.createTextNode(name.slice(0, at)));
+      var mark = document.createElement('mark');
+      mark.textContent = name.slice(at, at + query.length);
+      label.appendChild(mark);
+      label.appendChild(document.createTextNode(name.slice(at + query.length)));
+    }
+
+    function render(q) {
+      var query = q.trim().toLowerCase();
+      var hits = pages.filter(function (p) {
+        return !query ||
+          p.name.toLowerCase().indexOf(query) > -1 ||
+          p.note.toLowerCase().indexOf(query) > -1;
+      });
+      list.innerHTML = '';
+      hits.forEach(function (p, n) {
+        var a = document.createElement('a');
+        a.href = p.href;
+        a.id = 'sr-' + n;
+        a.setAttribute('role', 'option');
+        a.style.setProperty('--i', n);
+        var label = document.createElement('span');
+        label.className = 'search-label';
+        markMatch(label, p.name, query);
+        a.appendChild(label);
+        var em = document.createElement('em');
+        em.textContent = p.note;
+        a.appendChild(em);
+        list.appendChild(a);
+      });
+      if (count) {
+        count.textContent = hits.length
+          ? (hits.length + (hits.length === 1 ? ' page' : ' pages'))
+          : 'nothing';
+      }
+      empty.hidden = hits.length > 0;
+      active = -1;
+      input.removeAttribute('aria-activedescendant');
+      if (hits.length) setActive(0);
+    }
+
+    function openPanel() {
+      if (open) return;
+      open = true;
+      panel.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      input.setAttribute('aria-expanded', 'true');
+      render('');
+      window.setTimeout(function () { input.focus({ preventScroll: true }); input.select(); }, 60);
+    }
+
+    function closePanel(refocus) {
+      if (!open) return;
+      open = false;
+      panel.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      input.setAttribute('aria-expanded', 'false');
+      if (refocus) btn.focus({ preventScroll: true });
+    }
+
+    btn.addEventListener('click', function () { open ? closePanel(true) : openPanel(); });
+
+    input.addEventListener('input', function () { render(input.value); });
+
+    panel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); setActive(active + 1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(active - 1); }
+      else if (e.key === 'Enter') {
+        var all = items();
+        if (active > -1 && all[active]) { e.preventDefault(); window.location.href = all[active].getAttribute('href'); }
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!open) return;
+      if (panel.contains(e.target) || btn.contains(e.target)) return;
+      closePanel(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && open) { e.preventDefault(); closePanel(true); return; }
+      var typing = /^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || '');
+      var editing = (document.activeElement || {}).isContentEditable;
+      if (e.key === '/' && !open && !typing && !editing) { e.preventDefault(); openPanel(); }
+    });
+  })();
+
+  /* ══ 3. The pixel 404 ══════════════════════════════════════
+     The number is sampled from a hidden sheet of type, then held
+     together by a spring. A hand moving through it pushes the
+     pixels apart; when the hand leaves, they fall back into place.
+     The same field of force keeps working after the burst. */
+  var particles = [];
+  var trail = [];
+  var ripples = [];
+  var cell = 10;
+  var exploded = false;
+  var motion = false;
+  var frozen = false;                    /* held still while the film is over the page */
+  var recalling = false;                 /* pixels are on their way home: do not cull them */
+  var TAU = Math.PI * 2;
+  var REVEAL_AT = 5500;                  /* the number stands alone this long, then bursts */
+  var REACH = 150;                       /* how far the cursor is felt */
+  var REACH2 = REACH * REACH;
+  var pointer = {
+    x: -9999, y: -9999,                  /* where it is */
+    on: false, speed: 0, carry: 0, rippleAt: 0
+  };
+
+  function DPR() { return Math.min(window.devicePixelRatio || 1, 2); }
+
+  function fontStack() {
+    return '800 {SIZE}px Manrope, system-ui, sans-serif';
+  }
+
+  function build() {
+    var w = stage.clientWidth;
+    var h = stage.clientHeight;
+    if (!w || !h) return;
+
+    var dpr = DPR();
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    /* how large the number may be: it owns the top of the stage */
+    var targetW = Math.min(w * 0.86, 1040);
+    var targetH = h * 0.54;
+    var probe = document.createElement('canvas').getContext('2d');
+    probe.textAlign = 'center';
+
+    function measure(size) {
+      probe.font = fontStack().replace('{SIZE}', size);
+      return probe.measureText('404').width;
+    }
+    var size = 200;
+    for (var i = 0; i < 12; i++) {
+      var mw = measure(size);
+      if (!mw) break;
+      size = Math.max(40, Math.min(size * (targetW / mw), targetH / 0.72));
+    }
+
+    /* the number is drawn once more at full size, then counted block by
+       block: a block survives when most of it is inked. What the eye
+       reads is a stair, not a blur. */
+    var sheet = document.createElement('canvas');
+    sheet.width = w;
+    sheet.height = h;
+    var sctx = sheet.getContext('2d');
+    sctx.fillStyle = '#111110';
+    sctx.textAlign = 'center';
+    sctx.font = fontStack().replace('{SIZE}', size);
+
+    /* the middle of the em box is not the middle of the digits: measure the
+       inked height so the number sits optically centred, not mathematically */
+    probe.font = fontStack().replace('{SIZE}', size);
+    var metrics = probe.measureText('404');
+    var inkMid = (metrics.actualBoundingBoxAscent - metrics.actualBoundingBoxDescent) / 2;
+    var inkShift = (metrics.actualBoundingBoxLeft - metrics.actualBoundingBoxRight) / 2;
+    var centerY = h / 2 - Math.min(16, h * 0.02);
+    sctx.textBaseline = 'alphabetic';
+    sctx.fillText('404', w / 2 + inkShift, centerY + inkMid);
+
+    var img = sctx.getImageData(0, 0, w, h).data;
+
+    /* one square per pixel of a deliberately coarse raster: the grid the
+       eye reads as pixels is the grid the hand actually pushes. Blocks are
+       sized from the inked height of the number, not from the canvas, so a
+       phone and a wide screen get the same texture. */
+    var inkH = metrics.actualBoundingBoxAscent - metrics.actualBoundingBoxDescent;
+    cell = Math.max(8, Math.min(17, Math.round((inkH || size * 0.72) / 24)));
+    var gap = cell >= 14 ? 2 : 1;
+    var cols = Math.max(2, Math.floor(w / cell));
+    var rows = Math.max(2, Math.floor(h / cell));
+    var offX = (w - cols * cell) / 2;
+    var offY = (h - rows * cell) / 2;
+    var SUB = 4;
+    var INKED = 0.44;                  /* share of a block that must be type */
+
+    particles = [];
+    trail = [];
+    ripples = [];
+    for (var y = 0; y < rows; y++) {
+      for (var x = 0; x < cols; x++) {
+        var hits = 0;
+        for (var sy = 0; sy < SUB; sy++) {
+          for (var sx = 0; sx < SUB; sx++) {
+            var px = Math.round(offX + x * cell + (sx + 0.5) * cell / SUB);
+            var py = Math.round(offY + y * cell + (sy + 0.5) * cell / SUB);
+            if (px >= 0 && px < w && py >= 0 && py < h && img[(py * w + px) * 4 + 3] > 110) hits++;
+          }
+        }
+        if (hits / (SUB * SUB) >= INKED) {
+          var bx = offX + x * cell + gap / 2;
+          var by = offY + y * cell + gap / 2;
+          particles.push({
+            x: bx, y: by,
+            hx: bx, hy: by,                /* home: where the spring pulls */
+            ox: bx, oy: by,                /* origin: home, and never moved */
+            vx: 0, vy: 0,
+            s: cell - gap,
+            s0: cell - gap,                /* true size, so dust can be undone */
+            keep: Math.random() < 0.12,
+            dust: false,
+            dead: false
+          });
+        }
+      }
+    }
+
+    exploded = false;
+    motion = false;
+    stage.classList.remove('is-revealed');
+    ind.classList.remove('is-done');
+    draw();
+  }
+
+  function draw() {
+    var dpr = DPR();
+    var w = canvas.width / dpr;
+    var h = canvas.height / dpr;
+    ctx.clearRect(0, 0, w + 2, h + 2);
+
+    /* the number, and whatever is left of it */
+    ctx.fillStyle = '#111110';
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      if (p.dead) continue;
+      ctx.globalAlpha = p.dust ? 0.55 : 1;
+      ctx.fillRect(p.x, p.y, p.s, p.s);
+    }
+
+    /* the trail the hand leaves */
+    for (var t = 0; t < trail.length; t++) {
+      var d = trail[t];
+      ctx.globalAlpha = d.a;
+      ctx.fillRect(d.x, d.y, d.s, d.s);
+    }
+    ctx.globalAlpha = 1;
+
+    /* two quiet rings around the pointer, and nothing louder */
+    for (var r = 0; r < ripples.length; r++) {
+      var ring = ripples[r];
+      ctx.beginPath();
+      ctx.arc(ring.x, ring.y, ring.r, 0, TAU);
+      ctx.strokeStyle = 'rgba(168,124,51,' + ring.a.toFixed(3) + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+
+  /* a pixel that stays behind for a moment, then is gone */
+  function spawnTrail(x, y, vx, vy) {
+    if (trail.length > 120) trail.shift();
+    trail.push({
+      x: x + (Math.random() - 0.5) * 5,
+      y: y + (Math.random() - 0.5) * 5,
+      vx: -vx * 0.045 + (Math.random() - 0.5) * 0.4,
+      vy: -vy * 0.045 + (Math.random() - 0.5) * 0.4,
+      s: Math.random() < 0.5 ? 3 : 2,
+      a: 0.30 + Math.random() * 0.18,
+      fade: 0.012 + Math.random() * 0.008
+    });
+  }
+
+  function spawnRipple(x, y, strength) {
+    if (ripples.length > 5) ripples.shift();
+    ripples.push({ x: x, y: y, r: 4, a: 0.20 * strength, grow: 0.9 + strength * 0.5 });
+  }
+
+  /* push a particle away from the hand, softly, within reach */
+  function push(p, strength) {
+    var dx = p.x - pointer.x;
+    var dy = p.y - pointer.y;
+    var d2 = dx * dx + dy * dy;
+    if (d2 > REACH2 || d2 < 0.04) return;
+    var d = Math.sqrt(d2);
+    var fall = 1 - d / REACH;
+    var f = fall * fall * strength;
+    p.vx += (dx / d) * f;
+    p.vy += (dy / d) * f;
+  }
+
+  /* not every pixel comes back: a few of them stay on as dust, so the page
+     can still be pushed around long after the number is gone */
+  function dust(p, w, h) {
+    var edge = Math.random();
+    p.dust = true;
+    p.s = Math.max(2, Math.round(p.s * 0.42));
+    p.vx = (Math.random() - 0.5) * 0.5;
+    p.vy = (Math.random() - 0.5) * 0.5;
+    if (edge < 0.25) { p.x = -p.s; p.y = Math.random() * h; p.vx = 0.35 + Math.random() * 0.45; }
+    else if (edge < 0.5) { p.x = w; p.y = Math.random() * h; p.vx = -(0.35 + Math.random() * 0.45); }
+    else if (edge < 0.75) { p.y = -p.s; p.x = Math.random() * w; p.vy = 0.35 + Math.random() * 0.45; }
+    else { p.y = h; p.x = Math.random() * w; p.vy = -(0.25 + Math.random() * 0.3); }
+    p.hx = p.x;
+    p.hy = p.y;
+  }
+
+  /* how much of the number is home: pixels still alive, how many of them
+     within a pixel of their origin, and how many a hand is holding away */
+  function homeStats() {
+    var near = 0, held = 0, live = 0;
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      if (p.dead) continue;
+      live++;
+      var dx = p.x - p.ox;
+      var dy = p.y - p.oy;
+      if (dx * dx + dy * dy < 1) { near++; continue; }
+      if (pointer.on) {
+        var hx = p.x - pointer.x;
+        var hy = p.y - pointer.y;
+        if (hx * hx + hy * hy < REACH2) held++;
+      }
+    }
+    return { live: live, near: near, held: held,
+             wanted: Math.max(1, Math.ceil((live - held) * 0.99)) };
+  }
+
+  /* the words surface, and the film above is told exactly when */
+  var revealedAt = 0;
+  function reveal() {
+    stage.classList.add('is-revealed');
+    ind.classList.add('is-done');
+    revealedAt = (window.performance && performance.now) ? performance.now() : Date.now();
+  }
+
+  function explode() {
+    if (exploded) return;
+    exploded = true;
+    var cx = stage.clientWidth / 2;
+    var cy = stage.clientHeight / 2;
+
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      var dx = p.x - cx;
+      var dy = p.y - cy;
+      var d = Math.max(1, Math.hypot(dx, dy));
+      var power = 1.7 + Math.random() * 5.2;
+      p.vx = (dx / d) * power + (Math.random() - 0.5) * 2.4;
+      p.vy = (dy / d) * power - 1.5 - Math.random() * 2.6;
+    }
+
+    /* the burst goes first; the words surface from it a beat later */
+    window.setTimeout(reveal, 380);
+    if (announce) announce.textContent = 'This page doesn’t exist. But there’s always another way.';
+  }
+
+  function tick() {
+    var dpr = DPR();
+    var w = canvas.width / dpr;
+    var h = canvas.height / dpr;
+    /* the loop stops when everything is still — but a recall is not still
+       until the number is home, however small the last steps are */
+    var busy = exploded || pointer.on || motion || trail.length || ripples.length || recalling;
+
+    if (busy) {
+      /* the trail cools, the rings open and fade */
+      for (var t = trail.length - 1; t >= 0; t--) {
+        var d = trail[t];
+        d.x += d.vx;
+        d.y += d.vy;
+        d.vx *= 0.92;
+        d.vy = d.vy * 0.92 + 0.015;
+        d.a -= d.fade;
+        if (d.a <= 0 || d.x < -20 || d.x > w + 20 || d.y < -20 || d.y > h + 20) trail.splice(t, 1);
+      }
+      for (var r = ripples.length - 1; r >= 0; r--) {
+        var ring = ripples[r];
+        ring.r += ring.grow;
+        ring.a -= 0.006;
+        if (ring.a <= 0 || ring.r > 60) ripples.splice(r, 1);
+      }
+
+      var moving = false;
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        if (p.dead || frozen) continue;
+
+        if (p.dust) {
+          if (pointer.on) push(p, 2.1);
+          var slow = Math.abs(p.vx) + Math.abs(p.vy) < 0.35;
+          if (slow) { p.hx = p.x; p.hy = p.y; }      /* home is wherever it settles */
+          if (!pointer.on) {
+            p.vx += (p.hx - p.x) * 0.0022;
+            p.vy += (p.hy - p.y) * 0.0022;
+          }
+          p.vx *= 0.985;
+          p.vy *= 0.985;
+          p.vx += (Math.random() - 0.5) * 0.03;
+          p.vy += (Math.random() - 0.5) * 0.03;
+        } else if (exploded) {
+          if (pointer.on) push(p, 3.2);
+          p.vy += 0.235;
+          p.vx *= 0.992;
+          p.vy *= 0.992;
+        } else {
+          /* the intact number: pushed apart, then pulled home. On the way
+             back from the film the spring is let out a little, so the number
+             gathers instead of snapping. Once it is home the pull is the
+             page's own again. */
+          if (pointer.on) push(p, 3.6);
+          var k = recalling ? 0.020 : 0.085;
+          var damp = recalling ? 0.875 : 0.8;
+          p.vx += (p.hx - p.x) * k;
+          p.vy += (p.hy - p.y) * k;
+          p.vx *= damp;
+          p.vy *= damp;
+        }
+
+        p.x += p.vx;
+        p.y += p.vy;
+        if (Math.abs(p.vx) + Math.abs(p.vy) > 0.06) moving = true;
+
+        if (!recalling && !p.dust && (p.x < -40 || p.x > w + 40 || p.y > h + 40)) {
+          if (p.keep) dust(p, w, h);
+          else p.dead = true;
+        }
+      }
+      motion = moving;
+      if (recalling && !moving && homeStats().near >= homeStats().wanted) {
+        recalling = false;                           /* home, and behaving normally again */
+      }
+      draw();
+    }
+    window.requestAnimationFrame(tick);
+  }
+
+  stage.addEventListener('pointermove', function (e) {
+    var rect = canvas.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    var dx = x - pointer.x;
+    var dy = y - pointer.y;
+    var dist = pointer.on ? Math.hypot(dx, dy) : 0;
+
+    pointer.speed = dist;
+    pointer.x = x;
+    pointer.y = y;
+    pointer.on = true;
+
+    if (dist > 0) {
+      /* the hand leaves a ribbon: a pixel every few points of the path,
+         placed where the hand actually passed, not all at its tip */
+      var remaining = dist + (pointer.carry || 0);
+      var guard = 0;
+      while (remaining >= 3 && guard < 18) {
+        remaining -= 3;
+        var f = 1 - remaining / dist;
+        spawnTrail(pointer.x - dx * (1 - f), pointer.y - dy * (1 - f), dx, dy);
+        guard++;
+      }
+      pointer.carry = remaining < 3 ? remaining : 0;
+      var now = Date.now();
+      if (dist > 5 && now - pointer.rippleAt > 110) {
+        spawnRipple(x, y, Math.min(1, dist / 30));
+        pointer.rippleAt = now;
+      }
+    }
+  });
+
+  stage.addEventListener('pointerdown', function (e) {
+    var rect = canvas.getBoundingClientRect();
+    pointer.x = e.clientX - rect.left;
+    pointer.y = e.clientY - rect.top;
+    pointer.on = true;
+    spawnRipple(pointer.x, pointer.y, 1);
+    for (var i = 0; i < 6; i++) spawnTrail(pointer.x, pointer.y, 0, 0);
+  });
+
+  stage.addEventListener('pointerleave', function () { pointer.on = false; });
+  function lift(e) { if (e.pointerType === 'touch') pointer.on = false; }
+  stage.addEventListener('pointerup', lift);
+  stage.addEventListener('pointercancel', lift);
+
+  var resizeTimer = 0;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function () {
+      if (!exploded) build();
+    }, 160);
+  });
+
+  /* fonts decide the shape of the number: measure once they are in */
+  function start() {
+    build();
+    if (!particles.length) { build(); }
+    if (reduce.matches) {
+      /* no flight: the number simply gives way to the words */
+      canvas.style.transition = 'opacity .5s ease';
+      window.setTimeout(function () {
+        stage.classList.add('is-revealed');
+        ind.classList.add('is-done');
+        canvas.style.opacity = '0';
+        if (announce) announce.textContent = 'This page doesn’t exist. But there’s always another way.';
+      }, 700);
+    } else {
+      /* the clock starts on the frame the number is first on screen, not
+         when the script began: five and a half seconds of the number,
+         then the burst, then the words a beat later */
+      window.requestAnimationFrame(function () {
+        window.setTimeout(explode, REVEAL_AT);
+      });
+      window.requestAnimationFrame(tick);
+    }
+  }
+
+  /* ══ 9. The door the film uses ══════════════════════════════
+     The sequence that runs over this page needs three things: to know
+     when the words have surfaced, to let the pixels go, and to bring
+     them home again. Nothing here changes what the page does on its
+     own — with no film running, none of it is ever called. */
+  window.__nxLost = {
+    revealed: function () {
+      return stage.classList.contains('is-revealed');
+    },
+
+    /* the page's own finish, exactly as it happens on arrival: the number
+       lets go and the words surface from the burst a beat later. Used once
+       the reconstruction has been seen, so the completed screen is the
+       original one — words over dust — rather than words buried in the
+       middle of the number. */
+    showCopy: function () {
+      if (stage.classList.contains('is-revealed') && !frozen) return;   /* already up */
+      stage.classList.remove('is-revealed');
+      stage.classList.remove('is-rebuilt');
+      ind.classList.remove('is-done');
+      exploded = false;
+      frozen = false;
+      recalling = false;
+      explode();
+    },
+
+    /* when the words last surfaced, so a hold can be measured from it */
+    revealedAt: function () { return revealedAt; },
+
+    /* let every pixel go: some stay on the page, the rest wait at its edges */
+    scatter: function () {
+      var dpr = DPR();
+      var w = canvas.width / dpr;
+      var h = canvas.height / dpr;
+      if (!w || !h || !particles.length) return;
+
+      stage.classList.remove('is-revealed');
+      ind.classList.remove('is-done');
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        var edge = Math.random();
+        if (edge < 0.22) { p.x = -14 - Math.random() * 90; p.y = Math.random() * h; }
+        else if (edge < 0.44) { p.x = w + 14 + Math.random() * 90; p.y = Math.random() * h; }
+        else if (edge < 0.60) { p.x = Math.random() * w; p.y = -14 - Math.random() * 90; }
+        else if (edge < 0.76) { p.x = Math.random() * w; p.y = h + 14 + Math.random() * 90; }
+        else { p.x = Math.random() * w; p.y = Math.random() * h; }
+        p.dead = false;
+        p.dust = false;
+        p.s = p.s0;
+        p.vx = 0;
+        p.vy = 0;
+        p.hx = p.ox;
+        p.hy = p.oy;
+      }
+      exploded = false;
+      frozen = true;                 /* held still until the film lets go */
+      recalling = true;
+      motion = false;
+      draw();
+    },
+
+    /* bring them home: the same spring the number has always used */
+    rebuild: function () {
+      var dpr = DPR();
+      var w = canvas.width / dpr;
+      var h = canvas.height / dpr;
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        if (p.dead || p.x < -120 || p.x > w + 120 || p.y < -120 || p.y > h + 120) {
+          var edge = Math.random();
+          if (edge < 0.30) { p.x = -14 - Math.random() * 70; p.y = Math.random() * h; }
+          else if (edge < 0.60) { p.x = w + 14 + Math.random() * 70; p.y = Math.random() * h; }
+          else if (edge < 0.80) { p.x = Math.random() * w; p.y = -14 - Math.random() * 70; }
+          else { p.x = Math.random() * w; p.y = h + 14 + Math.random() * 70; }
+        }
+        p.dead = false;
+        p.dust = false;
+        p.s = p.s0;
+        p.vx = (Math.random() - 0.5) * 0.7;
+        p.vy = (Math.random() - 0.5) * 0.7;
+        p.hx = p.ox;
+        p.hy = p.oy;
+      }
+
+      frozen = false;
+      exploded = false;
+      recalling = true;
+      motion = true;
+      draw();
+    },
+
+    /* is the number whole again? every pixel within a pixel of home, so
+       the drawing is crisp before the words return, not merely close.
+       A pixel a visitor's hand is currently holding does not count against
+       it — the page's own physics must not stall the film. */
+    settled: function () {
+      if (!particles.length) return true;
+      var s = homeStats();
+      return s.live > 0 && s.near >= s.wanted;
+    }
+  };
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(start);
+  } else {
+    window.addEventListener('load', start);
+  }
+})();
+</script>
+<script src="js/lost-film.js" defer></script>
+<script src="js/music.js" defer></script>
+</body>
+</html>

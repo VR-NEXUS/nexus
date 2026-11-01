@@ -1,0 +1,153 @@
+/* ─────────────────────────────────────────────────────────────
+   NEXUS · the music player
+   One small black and gold instrument, fixed to the foot of every
+   page. Namespaced nxm- so it can live inside any of the pages
+   without touching their own styles.
+   ───────────────────────────────────────────────────────────── */
+
+@font-face{
+  font-family:"NX Mono";font-style:normal;font-weight:400 500;font-display:swap;
+  src:url("../assets/fonts/jetbrains-400-latin.woff2") format("woff2");
+}
+
+.nxm{
+  --nxm-black:#0B0B0A;
+  --nxm-white:#F4F0E8;
+  --nxm-gold:#C6A15B;
+  --nxm-line:rgba(198,161,91,.28);
+  position:fixed;
+  right:22px;
+  bottom:78px;
+  z-index:130;
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(6px);
+  transition:opacity .3s ease,transform .4s cubic-bezier(.22,1.12,.36,1),visibility .3s;
+}
+.nxm.is-ready{opacity:1;visibility:visible;transform:none}
+
+/* ── the round toggle ─────────────────────────────────────── */
+.nxm-toggle{
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  padding:0;
+  border-radius:50%;
+  border:1px solid var(--nxm-line);
+  background:rgba(11,11,10,.92);
+  color:var(--nxm-gold);
+  cursor:pointer;
+  box-shadow:0 10px 26px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06);
+  transition:border-color .3s ease,transform .35s cubic-bezier(.22,1.12,.36,1),box-shadow .3s ease;
+}
+.nxm-toggle:hover{border-color:var(--nxm-gold);transform:translateY(-2px)}
+.nxm-toggle:active{transform:translateY(0) scale(.95)}
+.nxm-toggle:focus-visible{outline:none;box-shadow:0 0 0 2px var(--nxm-black),0 0 0 4px rgba(198,161,91,.75)}
+
+.nxm-wave{display:flex;align-items:flex-end;gap:2px;height:14px}
+.nxm-wave i{
+  display:block;
+  width:2px;
+  border-radius:1px;
+  background:currentColor;
+  height:4px;
+  transform-origin:bottom;
+  transition:height .3s ease;
+  animation:nxmWave 1.05s ease-in-out infinite;
+  animation-play-state:paused;
+  opacity:.55;
+}
+.nxm-wave i:nth-child(2){animation-delay:.18s}
+.nxm-wave i:nth-child(3){animation-delay:.36s}
+.nxm-wave i:nth-child(4){animation-delay:.54s}
+.nxm[data-playing="true"] .nxm-wave i{animation-play-state:running;opacity:1}
+@keyframes nxmWave{
+  0%,100%{height:4px}
+  35%{height:13px}
+  70%{height:7px}
+}
+
+/* ── the card ─────────────────────────────────────────────── */
+.nxm-card{
+  position:absolute;
+  right:0;
+  bottom:calc(100% + 12px);
+  width:262px;
+  padding:16px 16px 14px;
+  border-radius:14px;
+  border:1px solid var(--nxm-line);
+  background:linear-gradient(180deg,rgba(17,17,16,.98),rgba(9,9,8,.99));
+  color:var(--nxm-white);
+  box-shadow:0 30px 60px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.05);
+  transform-origin:bottom right;
+  transform:translateY(8px) scale(.97);
+  opacity:0;
+  visibility:hidden;
+  transition:transform .4s cubic-bezier(.22,1.12,.36,1),opacity .3s ease,visibility .3s;
+}
+.nxm[data-open="true"] .nxm-card{transform:none;opacity:1;visibility:visible}
+
+.nxm-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.nxm-kicker{
+  font-family:"NX Mono",ui-monospace,monospace;
+  font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--nxm-gold);
+}
+.nxm-state{
+  font-family:"NX Mono",ui-monospace,monospace;
+  font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,240,232,.45);
+}
+.nxm-title{margin:0;font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.2;color:var(--nxm-white)}
+.nxm-artist{
+  margin:3px 0 14px;
+  font-family:"NX Mono",ui-monospace,monospace;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,240,232,.55);
+}
+
+.nxm-track{position:relative;height:2px;border-radius:2px;background:rgba(244,240,232,.14);overflow:hidden}
+.nxm-fill{position:absolute;inset:0;width:0;border-radius:2px;background:var(--nxm-gold);transition:width .25s linear}
+
+.nxm-controls{display:flex;align-items:center;gap:10px;margin-top:14px}
+.nxm-btn{
+  display:grid;place-items:center;
+  width:32px;height:32px;padding:0;
+  border-radius:50%;
+  border:1px solid var(--nxm-line);
+  background:none;color:var(--nxm-white);cursor:pointer;
+  transition:border-color .25s ease,color .25s ease,transform .3s ease;
+}
+.nxm-btn:hover{border-color:var(--nxm-gold);color:var(--nxm-gold)}
+.nxm-btn:active{transform:scale(.94)}
+.nxm-btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--nxm-black),0 0 0 4px rgba(198,161,91,.7)}
+.nxm-btn svg{width:12px;height:12px;display:block}
+.nxm-play{background:rgba(198,161,91,.12);border-color:rgba(198,161,91,.45);color:var(--nxm-gold)}
+
+.nxm-vol{
+  -webkit-appearance:none;appearance:none;
+  flex:1;height:16px;background:none;cursor:pointer;margin:0;
+}
+.nxm-vol::-webkit-slider-runnable-track{height:2px;border-radius:2px;background:rgba(244,240,232,.18)}
+.nxm-vol::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:9px;height:9px;margin-top:-3.5px;border-radius:50%;
+  background:var(--nxm-gold);border:0;
+}
+.nxm-vol::-moz-range-track{height:2px;border-radius:2px;background:rgba(244,240,232,.18)}
+.nxm-vol::-moz-range-thumb{width:9px;height:9px;border:0;border-radius:50%;background:var(--nxm-gold)}
+.nxm-vol:focus-visible{outline:1px solid rgba(198,161,91,.7);outline-offset:4px}
+
+@media (max-width:760px){
+  .nxm{right:14px;bottom:140px}
+  .nxm-card{width:min(262px,calc(100vw - 28px))}
+}
+@media (max-width:380px){
+  .nxm{right:12px;bottom:136px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .nxm,.nxm-card,.nxm-toggle{transition-duration:.001ms!important;animation:none!important}
+  .nxm-wave i{animation:none;height:8px;opacity:.8}
+}

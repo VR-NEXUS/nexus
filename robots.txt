@@ -1,0 +1,4 @@
+# Nexus website crawler policy
+User-agent: *
+Allow: /
+Sitemap: https://nexus-plum-one.vercel.app/sitemap.xml

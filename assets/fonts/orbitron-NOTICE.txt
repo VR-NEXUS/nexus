@@ -1,0 +1,9 @@
+Orbitron
+Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)
+Licensed under the SIL Open Font License, Version 1.1.
+https://scripts.sil.org/OFL
+Served here from files: orbitron-800-latin.woff2 (ExtraBold, weight 800, latin subset)
+
+Used for one thing only: the three lines of warning on the lost page's film.
+The matrix rain draws its binary at the same face, with the monospace stack
+below it as the fallback. Nothing else on the site uses this font.

@@ -1,0 +1,5 @@
+DM Mono
+Copyright 2020 The DM Mono Project Authors (https://github.com/googlefonts/dm-mono)
+Licensed under the SIL Open Font License, Version 1.1.
+https://scripts.sil.org/OFL
+Served here from files: dmmono-400-latin.woff2, dmmono-500-latin.woff2

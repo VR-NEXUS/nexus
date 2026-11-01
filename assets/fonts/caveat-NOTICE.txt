@@ -1,0 +1,5 @@
+Caveat, weight 500, latin subset.
+Source: https://fonts.google.com/specimen/Caveat (Google Fonts, woff2 build)
+Licence: SIL Open Font License 1.1, https://openfontlicense.org
+Used on this site for the hand-written line on the entry card only.
+Self-hosted: no request leaves the visitor's browser.
